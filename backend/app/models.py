@@ -1,4 +1,6 @@
+
 from sqlalchemy import Column, Integer, Text, ForeignKey, DateTime, Boolean
+
 from sqlalchemy.orm import relationship
 from datetime import datetime
 
@@ -30,6 +32,7 @@ class Report(Base):
     grade = Column(Text)
 
     student = relationship("Student", back_populates="reports")
+
     questions = relationship("Question", back_populates="report")
 
 
@@ -54,3 +57,4 @@ class Answer(Base):
 
     question = relationship("Question", back_populates="answers")
     student = relationship("Student")
+

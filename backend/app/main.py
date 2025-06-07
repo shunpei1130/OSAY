@@ -5,6 +5,7 @@ from . import models, schemas, crud
 from .database import engine, Base, get_db
 from .openai_client import generate_questions, grade_answers
 
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -49,3 +50,4 @@ def dashboard(db: Session = Depends(get_db)):
             for r in reports
         ]
     }
+

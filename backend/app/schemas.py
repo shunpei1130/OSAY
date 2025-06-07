@@ -33,12 +33,12 @@ class Student(BaseModel):
     class Config:
         orm_mode = True
 
-
 class Report(ReportBase):
     id: int
     created_at: datetime
     questions: List[Question] = []
     grade: str | None = None
+
 
     class Config:
         orm_mode = True
@@ -58,3 +58,4 @@ class SubmitAnswersRequest(BaseModel):
     username: str
     report_id: int
     answers: List[AnswerCreate]
+

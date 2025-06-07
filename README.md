@@ -5,6 +5,7 @@ lets students submit reports, answer automatically generated questions and see
 their pass/fail result.  A simple dashboard API lists all submissions for
 teachers.
 
+
 ## Getting Started
 
 1. Install dependencies:
@@ -33,5 +34,6 @@ teachers.
    ```
    The response includes the grading result.
 6. Teachers can query `/dashboard` to list all submissions.
+
 
 The server stores data in `backend/app.db` using SQLite for local development.

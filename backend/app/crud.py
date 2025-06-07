@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
+
 from . import models, schemas
 
 
@@ -46,7 +47,6 @@ def set_report_grade(db: Session, report_id: int, grade: str):
 
 def list_reports(db: Session):
     return db.query(models.Report).all()
-
 
 def create_report(db: Session, report: schemas.ReportCreate, questions: List[str]):
     db_report = models.Report(text=report.text)

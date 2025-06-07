@@ -39,3 +39,4 @@ def grade_answers(report_text: str, qa_pairs: List[tuple[str, str]]) -> str:
     )
     content = response["choices"][0]["message"]["content"]
     return "fail" if "不合格" in content else "pass"
+
