@@ -1,8 +1,10 @@
 # AuthEssay Beta
 
-This repository contains a minimal prototype for the AuthEssay service. The backend exposes
-an API endpoint that receives a report, generates follow up questions using GPT-4o and stores
-both the report and the generated questions in a database.
+This repository contains a prototype for the AuthEssay service.  The backend now
+lets students submit reports, answer automatically generated questions and see
+their pass/fail result.  A simple dashboard API lists all submissions for
+teachers.
+
 
 ## Getting Started
 
@@ -18,6 +20,20 @@ both the report and the generated questions in a database.
    ```bash
    uvicorn app.main:app --reload --app-dir backend
    ```
-4. Send a POST request to `/generate` with JSON body `{ "report_text": "..." }`.
+4. Submit a report:
+   ```bash
+   curl -X POST http://localhost:8000/generate -H 'Content-Type: application/json' \
+     -d '{"username": "alice", "report_text": "..."}'
+   ```
+   This returns the generated questions and a `report_id`.
+5. After answering the questions, send them back to `/submit_answers`:
+   ```bash
+   curl -X POST http://localhost:8000/submit_answers -H 'Content-Type: application/json' \
+     -d '{"username": "alice", "report_id": 1,
+          "answers": [{"question_id": 1, "text": "..."}]}'
+   ```
+   The response includes the grading result.
+6. Teachers can query `/dashboard` to list all submissions.
+
 
 The server stores data in `backend/app.db` using SQLite for local development.
