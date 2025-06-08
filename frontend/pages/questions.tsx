@@ -37,14 +37,19 @@ export default function Questions() {
 
   if (!report) return null
   return (
-    <div style={{padding:20}}>
+    <div className="container">
       <div>Time left: {time}s</div>
-      {report.questions.map((q:any, i:number) => (
+      {report.questions.map((q: any, i: number) => (
         <div key={q.id}>
           <p>{q.text}</p>
-          <textarea value={answers[i]} onChange={e=>{
-            const copy=[...answers]; copy[i]=e.target.value; setAnswers(copy);
-          }} />
+          <textarea
+            value={answers[i]}
+            onChange={e => {
+              const copy = [...answers]
+              copy[i] = e.target.value
+              setAnswers(copy)
+            }}
+          />
         </div>
       ))}
       <button onClick={submit}>Submit Answers</button>

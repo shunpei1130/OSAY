@@ -16,9 +16,12 @@ export default function Submit() {
     router.push('/questions')
   }
   return (
-    <div style={{padding:20}}>
+    <div className="container">
       <h1>Submit Report</h1>
-      <textarea value={text} onChange={e=>setText(e.target.value)} />
+      <textarea
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
       <button onClick={submit}>Submit</button>
     </div>
   )

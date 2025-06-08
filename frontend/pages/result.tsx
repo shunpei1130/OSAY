@@ -10,9 +10,9 @@ export default function Result() {
   }, [])
   if (!report) return null
   return (
-    <div style={{padding:20}}>
+    <div className="container">
       <h1>Result: {report.grade || 'pending'}</h1>
-      <button onClick={()=>router.push('/submit')}>New Report</button>
+      <button onClick={() => router.push('/submit')}>New Report</button>
     </div>
   )
 }
