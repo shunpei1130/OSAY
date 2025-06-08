@@ -9,9 +9,13 @@ export default function Home() {
     router.push('/submit')
   }
   return (
-    <div style={{padding:20}}>
+    <div className="container">
       <h1>AuthEssay Login</h1>
-      <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="Username" />
+      <input
+        value={username}
+        onChange={e => setUsername(e.target.value)}
+        placeholder="Username"
+      />
       <button onClick={login}>Login</button>
     </div>
   )
