@@ -12,9 +12,13 @@ teachers.
    ```bash
    pip install -r backend/requirements.txt
    ```
-2. Set your OpenAI API key in the environment:
+2. (Optional) Set your OpenAI API key in the environment:
    ```bash
    export OPENAI_API_KEY=your-key
+   ```
+   To run the demo without calling the OpenAI API, set:
+   ```bash
+   export DEMO_MODE=1
    ```
 3. Launch the API server:
    ```bash
