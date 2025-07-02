@@ -5,6 +5,8 @@ lets students submit reports, answer automatically generated questions and see
 their pass/fail result.  A simple dashboard API lists all submissions for
 teachers.
 
+For Japanese instructions on running the demo, see [README_JA.md](README_JA.md).
+
 
 ## Getting Started
 
@@ -12,9 +14,13 @@ teachers.
    ```bash
    pip install -r backend/requirements.txt
    ```
-2. Set your OpenAI API key in the environment:
+2. (Optional) Set your OpenAI API key in the environment:
    ```bash
    export OPENAI_API_KEY=your-key
+   ```
+   To run the demo without calling the OpenAI API, set:
+   ```bash
+   export DEMO_MODE=1
    ```
 3. Launch the API server:
    ```bash
