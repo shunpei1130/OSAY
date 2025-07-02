@@ -48,7 +48,9 @@ def set_report_grade(db: Session, report_id: int, grade: str):
 def list_reports(db: Session):
     return db.query(models.Report).all()
 
-def create_report(db: Session, report: schemas.ReportCreate, questions: List[str]):
+# Deprecated: legacy API kept for backward compatibility
+def create_report_simple(db: Session, report: schemas.ReportCreate, questions: List[str]):
+    """Create a report without associating it with a student."""
     db_report = models.Report(text=report.text)
     db.add(db_report)
     db.commit()
