@@ -5,6 +5,8 @@ lets students submit reports, answer automatically generated questions and see
 their pass/fail result.  A simple dashboard API lists all submissions for
 teachers.
 
+For Japanese instructions on running the demo, see [README_JA.md](README_JA.md).
+
 
 ## Getting Started
 
