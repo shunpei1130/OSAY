@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from datetime import datetime
 from pydantic import BaseModel
 
@@ -37,7 +37,7 @@ class Report(ReportBase):
     id: int
     created_at: datetime
     questions: List[Question] = []
-    grade: str | None = None
+    grade: Optional[str] = None
 
 
     class Config:

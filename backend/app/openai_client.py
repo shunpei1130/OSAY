@@ -2,10 +2,17 @@ import os
 from typing import List
 import openai
 
+DEMO_MODE = os.environ.get("DEMO_MODE") == "1"
+
 # Requires OPENAI_API_KEY environment variable
 
 
 def generate_questions(report_text: str, n: int = 3) -> List[str]:
+    """Return questions checking understanding of the report."""
+    if DEMO_MODE:
+        # In demo mode we skip the API call and just return sample questions
+        return [f"デモ質問{i+1}" for i in range(n)]
+
     prompt = (
         "次のレポート本文を読んで理解度を確認するための質問を" +
         f"{n}問生成してください。\n" +
